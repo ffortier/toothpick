@@ -24,7 +24,7 @@ void Toothpick::update() {
   bool aIntersected = false;
   bool bIntersected = false;
 
-  for (std::vector<Toothpick*>::const_iterator it = others->begin(), end = others->end(); it != end; ++it) {
+  for (auto it = others->begin(), end = others->end(); it != end; ++it) {
     if (*it != this) {
       if ((*it)->intersects(ax, ay)) {
         aIntersected = true;

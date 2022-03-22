@@ -45,7 +45,7 @@ bool Sketch::init() {
 }
 
 void Sketch::quit() {
-  for (std::vector<Toothpick*>::iterator it = toothpicks.begin(); it != toothpicks.end(); ++it) {
+  for (auto it = toothpicks.begin(); it != toothpicks.end(); ++it) {
     delete *it;
   }
 
@@ -85,7 +85,7 @@ void Sketch::processInput() {
 }
 
 void Sketch::update() {
-  for (std::vector<Toothpick*>::iterator it = toothpicks.begin(), end = toothpicks.end(); it != end; ++it) {
+  for (auto it = toothpicks.begin(), end = toothpicks.end(); it != end; ++it) {
     (*it)->update();
   }
 }
@@ -94,7 +94,7 @@ void Sketch::draw() const {
   SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
   SDL_RenderClear(renderer);
 
-  for (std::vector<Toothpick*>::const_iterator it = toothpicks.begin(), end = toothpicks.end(); it != end; ++it) {
+  for (auto it = toothpicks.begin(), end = toothpicks.end(); it != end; ++it) {
     (*it)->draw(renderer);
   }
 
